@@ -34,13 +34,13 @@ use crate::ring_pedersen_proof::{RingPedersenProof, RingPedersenStatement};
 #[derive(Clone, Deserialize, Serialize, Debug)]
 #[serde(bound = "E: Curve, H: Digest + Clone")]
 pub struct JoinMessage<E: Curve, H: Digest + Clone, const M: usize> {
-    pub(crate) ek: EncryptionKey,
+    pub ek: EncryptionKey,
     pub(crate) dk_correctness_proof: NiCorrectKeyProof,
     pub(crate) party_index: Option<u16>,
     pub(crate) dlog_statement: DLogStatement,
     pub(crate) composite_dlog_proof_base_h1: CompositeDLogProof,
     pub(crate) composite_dlog_proof_base_h2: CompositeDLogProof,
-    pub(crate) ring_pedersen_statement: RingPedersenStatement<E, H>,
+    pub ring_pedersen_statement: RingPedersenStatement<E, H>,
     pub(crate) ring_pedersen_proof: RingPedersenProof<E, H, M>,
 }
 

@@ -38,10 +38,10 @@ pub struct RefreshMessage<E: Curve, H: Digest + Clone, const M: usize> {
     points_encrypted_vec: Vec<BigInt>,
     dk_correctness_proof: NiCorrectKeyProof,
     pub(crate) dlog_statement: DLogStatement,
-    pub(crate) ek: EncryptionKey,
+    pub ek: EncryptionKey,
     pub(crate) remove_party_indices: Vec<u16>,
     pub(crate) public_key: Point<E>,
-    pub(crate) ring_pedersen_statement: RingPedersenStatement<E, H>,
+    pub ring_pedersen_statement: RingPedersenStatement<E, H>,
     pub(crate) ring_pedersen_proof: RingPedersenProof<E, H, M>,
     #[serde(skip)]
     pub hash_choice: HashChoice<H>,
